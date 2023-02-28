@@ -10,7 +10,7 @@ import {
   TextInput,
 } from "@strapi/design-system";
 
-export default function OwnerModal({ setShowPetModal, addPet }) {
+export default function PetModal({ setShowPetModal, addPet }) {
   const [name, setName] = useState("");
 
   const handleSubmit = async (e) => {
@@ -51,7 +51,7 @@ export default function OwnerModal({ setShowPetModal, addPet }) {
 
       <ModalBody>
         <TextInput
-          placeholder="Add Name Here"
+          placeholder="Add Pet Name Here"
           label="Pet Name"
           name="text"
           hint="Max 40 characters"
