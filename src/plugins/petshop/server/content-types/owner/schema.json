@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "owners",
+  "info": {
+    "singularName": "owner",
+    "pluralName": "owners",
+    "displayName": "Owner"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "pluginOptions": {
+    "content-manager": {
+      "visible": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "petName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "isDone": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

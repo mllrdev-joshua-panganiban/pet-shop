@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "petnames",
+  "info": {
+    "singularName": "petname",
+    "pluralName": "petnames",
+    "displayName": "Pet",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::petshop.owner",
+      "inversedBy": "pets"
+    }
+  }
+}
