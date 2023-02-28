@@ -27,6 +27,10 @@
       "relation": "oneToMany",
       "target": "api::petname.petname",
       "mappedBy": "owner"
+    },
+    "hasPet": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
