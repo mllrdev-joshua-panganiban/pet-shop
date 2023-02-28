@@ -39,6 +39,11 @@ export default function OwnerTable({
   editOwner,
   setShowModal,
 }) {
+
+  async function addPet(data){
+    //Add Code here
+  }
+
   return (
     <Box
       background="neutral0"
@@ -58,10 +63,6 @@ export default function OwnerTable({
       >
         <Thead>
           <Tr>
-            <Th>
-              <Typography variant="sigma">ID</Typography>
-            </Th>
-
             <Th>
               <Typography variant="sigma">Owner</Typography>
             </Th>
@@ -86,10 +87,6 @@ export default function OwnerTable({
             return (
               <Tr key={owner.id}>
                 <Td>
-                  <Typography textColor="neutral800">{owner.id}</Typography>
-                </Td>
-
-                <Td>
                   {isEdit ? (
                     <OwnerInput
                       value={inputValue}
@@ -103,13 +100,24 @@ export default function OwnerTable({
                 <Td>
                     <Typography textColor="neutral800">
                         <div>
-                            {owner.pets.map((pet) => {
+                          { owner.hasPet ?
+                            owner.pets.map((pet) => {
                                 return(
                                     <div key={pet.id}>
                                         <div>{pet.name}</div>
                                     </div>
                                 )
-                            })}
+                            }) :
+                            <Box>
+                              <Button
+                                onClick={() => setShowPetModal(true)}
+                                variant="secondary"
+                                startIcon={<Plus />}
+                              >
+                                Add Pet
+                              </Button>
+                            </Box>
+                          }
                         </div>
                     </Typography>
                 </Td>
@@ -140,16 +148,7 @@ export default function OwnerTable({
                           icon={<Trash />}
                         />
                       </Box>
-
-                      <Box paddingLeft={1}>
-                        <IconButton
-                          onClick={() => setShowPetModal(true)}
-                          label="Add Pet"
-                          noBorder
-                          icon={<Plus />}
-                        />
-                      </Box>
-                      {showPetModal && <PetModal setShowPetModal={setShowPetModal}/>}
+                      {showPetModal && <PetModal setShowPetModal={setShowPetModal} addPet={addPet}/>}
                     </Flex>
                   )}
                 </Td>
