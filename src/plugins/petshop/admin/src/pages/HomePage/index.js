@@ -6,7 +6,6 @@
 
 import React, { memo, useEffect, useState } from 'react';
 import { LoadingIndicatorPage } from '@strapi/helper-plugin';
-import petShopRequests from '../../api/petshop';
 import { Layout, BaseHeaderLayout, ContentLayout } from '@strapi/design-system/Layout'
 import { EmptyStateLayout } from "@strapi/design-system/EmptyStateLayout";
 import { Button } from "@strapi/design-system/Button";

@@ -21,12 +21,7 @@
       "required": true,
       "maxLength": 40
     },
-    "petName": {
-      "type": "string",
-      "required": true,
-      "maxLength": 40
-    },
-    "isDone": {
+    "hasPet": {
       "type": "boolean",
       "default": false
     }
